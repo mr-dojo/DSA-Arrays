@@ -28,7 +28,7 @@ class HashMap {
     this._hashTable[index] = {
       key,
       value,
-      DELETED: false
+      DELETED: false,
     };
   }
 
@@ -86,6 +86,34 @@ class HashMap {
     return hash >>> 0;
   }
 }
+
+// Attempt at finding anagrams in an array of strings
+function findAnagrams(array) {
+  const a = new HashMap();
+  const splitValues = array.map((value) => value.split(""));
+  for (let i = 0; i < array.length; i++) {
+    const finalArray = [];
+    a.set(array[i], splitValues[i]);
+    if (a.length > 1) {
+      a.get(array[i]).forEach(letter => {
+        if (!a.get(array[i - 1]).includes(letter)) {
+          return;
+        } else {
+          finalArray.push(array[i])
+        }
+      })
+      return;
+    }
+  }
+  // For every item in array
+  for (let i = 0; i < array.length; i++) {
+    // If the items value in the _hashTable is equal to the item + 1's value
+    if (a.get(array[i]))
+  }
+  console.log(a._hashTable);
+}
+
+const anagramValues = ["east", "cars", "acre", "arcs", "teas", "eats", "race"];
 
 function makeHashMap() {
   const lotr = new HashMap();
