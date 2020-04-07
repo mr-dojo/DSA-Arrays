@@ -105,9 +105,7 @@ function makeBST() {
   BST.insert(2, "two");
   BST.insert(5, "five");
   BST.insert(7, "seven");
-  console.log(BST.find(3));
-
-  console.log(BST);
+  return BST;
 }
 
 function makeBSTLetters() {
@@ -127,4 +125,30 @@ function makeBSTLetters() {
   console.log(BST.find("E"));
   BST.remove("Y");
   console.log(BST);
+  return BST;
+}
+
+// Non-functioning binary search tree height checker
+function checkHeight(BST) {
+  leftHeight = 0;
+  rightHeight = 0;
+  if (BST.key == null) {
+    return 0;
+  } else {
+    if (!BST.left && !BST.right) {
+      if (leftHeight >= rightHeight) {
+        return leftHeight;
+      } else {
+        return rightHeight;
+      }
+    }
+    if (BST.left) {
+      leftHeight++;
+      checkHeight(BST.left);
+    }
+    if (BST.right) {
+      rightHeight++;
+      checkHeight(BST.right);
+    }
+  }
 }
