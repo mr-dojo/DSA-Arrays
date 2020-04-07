@@ -87,6 +87,10 @@ class HashMap {
   }
 }
 
+// 7. Separate Chaining
+// NOPE NOPE NOPE NOPE NOPE NOPE
+
+// 6. Anagram grouping:
 // Attempt at finding anagrams in an array of strings
 function findAnagrams(array) {
   const a = new HashMap();
@@ -95,20 +99,19 @@ function findAnagrams(array) {
     const finalArray = [];
     a.set(array[i], splitValues[i]);
     if (a.length > 1) {
-      a.get(array[i]).forEach(letter => {
+      a.get(array[i]).forEach((letter) => {
         if (!a.get(array[i - 1]).includes(letter)) {
           return;
         } else {
-          finalArray.push(array[i])
+          finalArray.push(array[i]);
         }
-      })
+      });
       return;
     }
   }
   // For every item in array
   for (let i = 0; i < array.length; i++) {
     // If the items value in the _hashTable is equal to the item + 1's value
-    if (a.get(array[i]))
   }
   console.log(a._hashTable);
 }
