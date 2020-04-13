@@ -133,11 +133,11 @@ function makeHashMap() {
   lotr.set("LadyOfLight", "Galadriel");
   lotr.set("HalfElvin", "Arwen");
   lotr.set("Ent", "Treebeard");
-  console.log(lotr.get("Hobbit"));
-  console.log(lotr.get("Maiar"));
-  console.log(lotr._hashTable);
+  // console.log(lotr.get("Hobbit"));
+  // console.log(lotr.get("Maiar"));
+  // console.log(lotr._hashTable);
 
-  console.log("Capacity = " + lotr._capacity);
+  // console.log("Capacity = " + lotr._capacity);
 }
 
 makeHashMap();
